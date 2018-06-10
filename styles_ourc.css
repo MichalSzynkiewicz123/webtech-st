@@ -1,0 +1,149 @@
+/*This is a CSS comment*/
+
+body {
+padding: 0;
+text-align: justify;
+font-family: "Century Gothic", Verdana, sans-serif;
+font-size: 13px;
+color: #666666;
+background-color:#25323A;
+}
+
+p {text-align: left;
+}
+
+#header {
+position:relative;
+width: 680px;
+height:100px;
+margin-left:29px;
+margin-right:20px;
+background: url(images/header.jpg) no-repeat;
+}
+
+#page
+{
+margin: 0;
+height: 100%;
+position: relative;
+background: #25323A url(images/background.jpg) repeat-y;
+  /*increase width of page to 100% to make everything lineup*/
+width: 100%;
+}
+
+.content
+{
+width:680px;
+position:relative;
+padding-left:40px;
+color:#111111;
+text-align:left;
+font-family:"Century-Gothic", Verdana, sans-serif;
+line-height:20px;
+}
+
+
+#navbar
+{
+/* add semicolon*/
+position:relative;
+width: 680px;
+height:55px;
+margin-left:29px;
+margin-right:20px;
+background: url(images/nav.jpg) no-repeat;
+}
+
+#page_content
+{
+width: 680px;
+height:650px;
+}
+
+.title
+{
+position:relative;
+left:25px;
+top:20px;
+text-align:left;
+font-family:"Century Gothic", Verdana, sans-serif;
+font-size:32px;
+font-weight:bold;
+color:#000000;
+}
+
+.title2
+{
+text-align:left;
+padding-left:40px;
+padding-top:10px;
+padding-bottom:10px;
+color: #2C4969;
+font-family: "Century Gothic", Verdana, sans-serif;
+font-size:24px;
+font-weight:bold;
+}
+
+.sponsors
+{
+width: 124px;
+font-size:11px;
+font-weight:bold;
+line-height:20px;
+height:auto;
+margin-left:2px;
+margin-right:-2px;
+background-repeat:no-repeat;
+text-align:left;
+float:right;
+}
+
+.sponsors a:hover
+{
+color:#C4E3E8;
+}
+
+.links
+{
+font-size:13px;
+font-weight:bold;
+margin-top:27px;
+margin-bottom:32px;
+margin-right:5px;
+}
+
+.hmenu
+{
+height:36px;
+width: 120px;
+text-align:center;
+float:left;
+font-family: "Century Gothic", Verdana, sans-serif;
+font-size:14px;
+font-weight:bold;
+color:#252F33;
+padding-top:19px;
+}
+
+.hmenu:hover
+{
+background: url(images/nav2.jpg) repeat-x;
+}
+
+a
+{
+text-decoration:none;
+color:#252F33;
+}
+
+#footer {
+  /*change the width of footer to 760px to make everything lineup*/
+width: 760px;
+height:60px;
+background: url(images/footer.jpg) no-repeat;
+text-align:center;
+font-size:10px;
+color:#000000;
+padding-top:24px;
+/*replace open curlybracket to close culrlybracket*/
+}
