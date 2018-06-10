@@ -1,0 +1,20 @@
+body{
+  counter-reset: p;
+  color: #0000BB;
+}
+h1{
+  color: #000000;
+}
+p::before{
+  counter-increment: p;
+  content: counter(p) "- ";
+}
+.gr{
+  color: #007700;
+}
+.rd{
+  color: #DD0000;
+}
+.or{
+  color: #FF8000;
+}

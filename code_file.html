@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="code_file.css">
+    <title>PHP Code for password check</title>
+  </head>
+  <body>
+    <h1>Checking a password with php</h1>
+    <p><code>&lt;?php</code>
+    <p><code><span class="gr">if(!</span>defined<span class="gr">(</span><span class="rd">'ISITSAFETORUN'</span><span class="gr">))&nbsp;{</span></code>
+    <p><code><span class="gr">&nbsp;&nbsp;&nbsp;die(</span><span class="rd">'cannot&nbsp;be&nbsp;run&nbsp;on&nbsp;its&nbsp;own'</span><span class="gr">);&nbsp;</span></code>
+    <p><code><span class="gr">}</span></code>
+    <p><code><span class="gr">if&nbsp;(!</span>$db<span class="gr">)&nbsp;die&nbsp;(</span>$error<span class="gr">);</span></code>
+    <p><code>$hashed_password&nbsp;<span class="gr">=&nbsp;</span><span class="rd">''</span><span class="gr">;</span></code>
+    <p>
+    <p><code>&nbsp;&nbsp;&nbsp;&nbsp;$sql&nbsp;<span class="gr">=&nbsp;</span><span class="rd">"SELECT&nbsp;hashpass&nbsp;FROM&nbsp;'people'&nbsp;WHERE&nbsp;username&nbsp;=&nbsp;:username"</span><span class="gr">;</span></code>
+    <p><code>&nbsp;&nbsp;&nbsp;&nbsp;$stmt&nbsp;<span class="gr">=&nbsp;</span>$db<span class="gr">-&gt;</span>prepare<span class="gr">(&nbsp;</span>$sql&nbsp;<span class="gr">);</span></code>
+    <p><code>&nbsp;&nbsp;&nbsp;&nbsp;$stmt<span class="gr">-&gt;</span>bindValue<span class="gr">(</span><span class="rd">":username"&nbsp;</span><span class="gr">,</span>$username&nbsp;<span class="gr">,&nbsp;</span>SQLITE3_TEXT<span class="gr">);</span></code>
+    <p><code>&nbsp;&nbsp;&nbsp;&nbsp;$result&nbsp;<span class="gr">=&nbsp;</span>$stmt<span class="gr">-&gt;</span>execute<span class="gr">();</span></code>
+    <p><code>&nbsp;&nbsp;&nbsp;&nbsp;<span class="or">//$result&nbsp;=&nbsp;$dbhandle-&gt;query($sql)&nbsp;or&nbsp;die('Query&nbsp;failed');&nbsp;&nbsp;&nbsp;</span></code>
+    <p>&nbsp;
+    <p>
+    <p><code><span class="gr">while&nbsp;(</span>$row&nbsp;<span class="gr">=&nbsp;</span>$result<span class="gr">-&gt;</span>fetchArray<span class="gr">())</span></code>
+    <p><code><span class="gr">{</span></code>
+    <p><code><span class="or">//echo&nbsp;'we&nbsp;have&nbsp;found&nbsp;a&nbsp;row'&nbsp;;</span></code>
+    <p><code><span class="or">&nbsp;&nbsp;&nbsp;&nbsp;</span>$hashed_password&nbsp;<span class="gr">=&nbsp;</span>$row<span class="gr">[</span><span class="rd">'hashpass'</span><span class="gr">];</span></code>
+    <p><code><span class="gr">}</span></code>
+    <p><code><span class="gr">if&nbsp;(</span>password_verify<span class="gr">(</span>$userpassword<span class="gr">,&nbsp;</span>$hashed_password<span class="gr">))&nbsp;{</span></code>
+    <p><code><span class="gr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span class="rd">'&nbsp;you&nbsp;have&nbsp;successfully&nbsp;logged&nbsp;in&nbsp;'</span><span class="gr">;</span></code>
+    <p><code><span class="gr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>$ISPASSWORDVALID&nbsp;<span class="gr">=&nbsp;</span>TRUE<span class="gr">;</span></code>
+    <p><code><span class="gr">&nbsp;&nbsp;&nbsp;&nbsp;}else{</span></code>
+    <p><code><span class="gr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>$ISPASSWORDVALID&nbsp;<span class="gr">=&nbsp;</span>FALSE<span class="gr">;</span></code>
+    <p><code><span class="gr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span class="rd">'Password&nbsp;does&nbsp;not&nbsp;match'&nbsp;</span><span class="gr">;</span></code>
+    <p><code>&nbsp;&nbsp;&nbsp;&nbsp;<span class="gr">}</span></code>
+    <p><code>?&gt;</code>
+  </body>
+</html>

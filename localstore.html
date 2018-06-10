@@ -1,0 +1,45 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<title>Localstore</title>
+	<script>
+	function storelocal()
+	{
+		localStorage.setItem('AJAX', 'Acronym for Asynchronous JavaScript and XML, which allows data exchange between web browser and server without a web page being reloaded.');
+		localStorage.setItem('Cache', 'Stored data that can be accessed locally from a web application.');
+		localStorage.setItem('client', 'A client is an application or system that requests and accesses a service made available by a server.');
+		localStorage.setItem('CSS', 'Cascading Style sheets - CSS The style language used with HTML 4.1 and XHTML 1.0');
+		localStorage.setItem('dynamic', 'Website content that changes over time or in response to user interactions and/or preferences');
+		localStorage.setItem('GPX', 'An XML data format for the interchange of GPS data.');
+
+	}
+	function readlocal()
+	{
+		storedcontent = localStorage.getItem('maincontent');
+		example = localStorage.getItem('firstitem');
+	}
+/*To check what has been stored you can iterate through all items in the store*/
+	function printstore()
+	{
+		result='';
+		for (var i = 0; i < localStorage.length; i++){
+			result=result + '<p>' + localStorage.key(i) + ' = '+(localStorage.getItem(localStorage.key(i))) + '</p>';
+		}
+		document.getElementById('showstore').innerHTML = result ;
+	}
+	function emptystore()
+	{
+		localStorage.clear();
+
+	}
+	</script>
+</head>
+<body>
+<h1>localStorage</h1>
+<button type="button" onclick="storelocal()" >Store data</button>
+<button type="button" onclick="printstore()" >Print store</button>
+<button type="button" onclick="emptystore()" >Empty store</button>
+<section id="showstore"><h3>Nothing stored. click the button above. </h3></section>
+
+</body>
+</html>

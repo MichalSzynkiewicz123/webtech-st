@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="template.css">
+  <title>Responsive page template</title>
+</head>
+<body>
+  <nav id="menu">
+    <ul id="main-menu">
+      <li><a href="">Search</a></li>
+      <li><a href="">Add</a></li>
+      <li><a href="">Edit/Delete</a></li>
+    </ul>
+  </nav>
+<main class="main-content">
+  <form name="formSearch" class="" action="template.php" method="post">Search for Term
+    <p>Term:<input type="text" name="term" /></p>
+    <p><input type="submit" name="Search" value="Search"/>
+  </form>
+  <div id="result"></div>
+  <form name="formAdd" class="" action="template.php" method="post">Add new Term
+    <p>Term:<input type="text"/></p>
+    <p>Definition:<input type="text"/></p>
+    <p><input type="button" name="Add" value="Add"/>
+  </form>
+  <form name="formEditDelete" class="" action="template.php" method="post">Edit or Delete Term
+    <p>Term:<input type="text"/></p>
+    <p>Definition:<input type="text"/></p>
+    <p><input type="submit" name="Edit" value="Edit"/>
+    <p><input type="submit" name="Delete" value="Delete"/>
+  </form>
+</main>
+<footer>
+</footer>
+</body>
+</html>

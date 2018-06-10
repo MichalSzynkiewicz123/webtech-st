@@ -1,0 +1,48 @@
+
+
+li {
+  display: inline-block;
+  margin-bottom: 4px; /* This makes a visible gap between the menu items. */
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+}
+li a {
+  display: block;
+  height: 40px;
+  line-height: 40px; /*This makes the clickable area of the link the full size of the visible area that surrounds the link */
+  width: 100%;
+  text-align: center;
+  border: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /*This indicates too much text for the space with ... */
+}
+li a:hover {
+  background: lightblue; /*Change colour on hover.*/
+}
+form, div {
+  padding: 4px;
+  border-bottom: 2px solid black;
+  margin-bottom: 4px;
+}
+@media screen and (min-width: 500px) {
+ul {
+        margin-top: 0;
+    }
+li {
+    margin-right: 2px;/* Space between each menu item. */
+    width: calc(97% /3 ); /*Calc is very useful. Here we want the available space    divided into 7 equal widths.*/
+    float: left;
+  }
+
+  .display-menu {
+  display: none;
+  }
+  #menu {
+    display: inline;
+    float: left;
+    width: 100%;
+  }
+
+}
